@@ -1,0 +1,163 @@
+ommentare werden mit // geschrieben
+
+User Input + Output;
+Text Output: Console.WriteLine("");
+Text Input (Variable): x-typ x = Console.ReadLine();
+
+Variablen;
+(x-typ) "Variable Name" = "x";
+
+string = Variable mit buchstaben
+int = Ganze Zahl als Variable (Integer)
+double = Kommazahlen als Variable
+float = Kommazahlen aber eine verändendernde
+
+Variablen im Text eingeben:
+Console.WriteLine("text" + x + "text");
+
+Funktionen;
+
+static void "name"()
+{
+}
+
+Man kann Funktionen auch in der Main Funktion oder anderen Aufrufen;
+Bsp: 
+static void Main(string[] args)
+{
+    Funktion();
+}
+
+Class;
+
+Variablen können in Class definiert werden mit "static"
+Bsp:
+static x-typ "Variable Name" = x;
+wird dadurch "globale" variable und kann in jeder funktion benützt werden
+
+
+if und else;
+
+If(x < y)
+{
+    x
+} else
+{
+    x
+}
+
+for-schleife;
+
+Beispiel für eine Schleife die 5x passiert:
+for(int i = 0; i < 5; i++)
+{
+    x
+}
+
+man kann in "for" eine variable bestimmen und mit ++ die variable um eins erhöhen
+(mehrere befehle können in der klammer benützt werden)
+
+
+GUI;
+
+man kann Text oder Nummern von Textboxen benützen:
+string x = textBox.Text;
+Um Zahlen zu benützen muss man diese von strings zu int oder double kovertieren
+int x = int.Parse(Textbox.Text);
+
+Um von einer Combobox eine Zahl zu erhalten:
+int x = int.Parse(TextBox.Text);
+
+--- Unity Part ---
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Sciptv0 : MonoBehaviour
+{
+    // Start is called before the first frame update (nur beim ersten Starts)
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame (permanent)
+    void Update()
+    {
+        
+    }
+}
+
+Standard Code von Unity 
+
+Dings:
+
+funktion; OnMouseDown;
+Simple Funktion mit der man Events mit einem Mausklick herbeirufen kann. (Links-click)
+private void OnMouseDown()
+{
+    xy
+}
+
+Input.GetKeyDown
+Dasselbe wie bei OnMouseDownaber mit der Tastatur.
+if(Input.GetKeyDown(KeyCode.Space)){}
+^If Funktion die passiert falls Leerzeichen gedrückt wird.
+
+Destroy;
+Zerstört z.B. ein gameObject. Man kann Zeit einstellen bis zur zerstörung.
+Destroy(gameObject,3f); // Object wird nach 3 Sekunden zerstört.
+
+Rigidbody;
+
+Rigidbody rb; // muss in class defininiert werden
+Rigidbody wird der Variable rb zugeordnet.
+
+rb = GetComponent<Rigidbody>();
+Die Daten von Rigidbody werden von Unity zum Code gegeben
+
+AddForce;
+Force wirkt auf x,y oder z Achse
+rb.AddForce(Vector3.up * 500);
+
+Velocity (Rigidbody);
+Bewegung in eine Richtung:
+rb.velocity = Vector3.forward * 20f; // In diesem Fall wird 20 Velocity(?) in die Richtung "forward" gegeben.
+
+Collision;
+Falls ein Objekt mit einem anderen kollidiert.
+private void OnCollisionEnter(Collision collision)
+{
+    xy
+}
+kann man bei Gegnern benützen:
+If(Collision.gameObject.tag == "Enemy")
+{
+    Destroy(gameObject);
+}
+
+
+Animator;
+Animator muss in class defininiert werden so wie Rigidbody:
+Animator anim;
+
+Die Daten müssen auch von Unity bezogen werden:
+anim = GetComponent<Animator>();
+
+Scene Mangagment;
+Um Szenen im Code miteinzubeziehen müssen sie am Anfang des Codes gegeben werden:
+using UnityEngine.SceneManagment;
+
+
+Movement;
+
+Variablen die davor definiert werden müssen:
+float xInput;
+float zInput;
+float yInput;
+
+public float speed;
+
+xInput = Input.GetAxis("Horizontal");
+zInput = Input.GetAxis("Vertical");
